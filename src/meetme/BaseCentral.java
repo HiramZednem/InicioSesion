@@ -32,7 +32,6 @@ int sesionIniciada;
         this.contraseña = contraseña;
     }
 
-
 public void Registrar(){
           registro = new datosUsuario(nombre, contraseña); //Se guardan los datos en la variable registro(que almacena datos tipo datosUsuario) y crea el objeto con ayuda del contructor
           lista.add(registro); //Se agrega a mi Arraylist
@@ -67,10 +66,10 @@ public String LeerBandeja(int idPropia){
     return  lista.get(idPropia).PilaUsuario.pop(); //Aqui se recibe la id propia y saca el ultimo dato de la pila (que es la variable Mensaje)
 }
 
-
 public void CambiarContraseña(String _nombre,String _contraseña){ //Cambiar contraseña, este codigo es reutilizado de iniciarSesion, primero inicia sesion y despues si el inicio de sesion es valido deja cambiar la contraseña.
     boolean credencialesCorrectas = false;
     for (int i=0; i< lista.size();i++){
+        
             String auxNombre = lista.get(i).getNombre();
             String auxContraseña = lista.get(i).getContraseña();
 
@@ -115,12 +114,6 @@ public boolean ComprobarRegistro(String usuario){
 }
 
 
-
-
-
-
-
-
 //Getters
 public int getSesionIniciada(){
         return sesionIniciada;
@@ -129,6 +122,5 @@ public int getSesionIniciada(){
     public String getNombre() {
         return nombre;
     }
-
 
 }

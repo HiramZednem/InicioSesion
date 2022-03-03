@@ -180,8 +180,6 @@ MenuRegistro menuRegistro = new MenuRegistro();
           //y hace visible la pestaña de MenuSesionIniciada
            MenuSesionIniciada metodoS = new MenuSesionIniciada(String.valueOf(metodo.getSesionIniciada()),metodo.getNombre());
            metodoS.setVisible(true);
-           
-           
            //Limpia los campos de usuario y contraseña una vez se dio el inicio de sesion
            txtUsuario.setText(null);
            txtContraseña.setText(null);
@@ -213,9 +211,6 @@ MenuRegistro menuRegistro = new MenuRegistro();
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -261,5 +256,4 @@ MenuRegistro menuRegistro = new MenuRegistro();
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
-
 }

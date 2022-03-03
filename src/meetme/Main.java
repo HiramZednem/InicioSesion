@@ -8,5 +8,4 @@ public class Main {
           MenuInicioSesion Menu = new MenuInicioSesion();
           Menu.setVisible(true);
     }
-    
 }
