@@ -84,15 +84,21 @@ public void CambiarContraseña(String _nombre,String _contraseña){ //Cambiar co
     if (!credencialesCorrectas)
    JOptionPane.showMessageDialog(null,"Credenciales Incorrectas!");//Si la credencial es invalida se le manda este mensaje.
 }
+
 public void BuscarUsuario(String BusquedaUsuario){
-    //Creo metodo BuscarUsuario, recibe BusquedaUsuario que es el usuario que estamos buscando.
+    //Creo metodo BuscarUsuario, recibe BusquedaUsuario y comprueba si esta en el ArrayList, si es verdadero imprime los datos del usuario
+    boolean credencialesCorrectas = false;
     for (int i=0; i< lista.size();i++){ 
     
             String auxNombre = lista.get(i).getNombre(); //Creo auxNombre, para almacenar el nombre que va cambiando segun la iteracion del ciclo for y compararlos
             if (BusquedaUsuario.equals(auxNombre)) {
+                credencialesCorrectas = true;
                 JOptionPane.showMessageDialog(null,lista.get(i).imprimirUsuario(i));
                 break;
             }
+    }
+    if(!credencialesCorrectas){
+         JOptionPane.showMessageDialog(null,"No se encontro ese Usuario!");
     }
 }
 //Getters
