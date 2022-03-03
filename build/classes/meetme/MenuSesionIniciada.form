@@ -97,6 +97,7 @@
                                   <Component id="txtTuID1" pref="223" max="32767" attributes="0"/>
                                   <Component id="txtTuID" pref="223" max="32767" attributes="0"/>
                                   <Component id="btnEnviarMensaje" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnUsuario" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -114,6 +115,8 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtTuID1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btnUsuario" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="btnEnviarMensaje" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnCerrarSesion" min="-2" max="-2" attributes="0"/>
@@ -166,6 +169,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnviarMensajeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar Usuario"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuarioActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -11,7 +11,10 @@ public class datosUsuario {
         this.Contraseña = Contraseña;
     }
  
-    
+    public String imprimirUsuario(int i){ //Es un metodo que se usa para ver los datos de los usuario mediante el arraylist.
+        String impresion = "El nombre del Usuario es: "+Nombre+"\nSu ID es: "+i;
+                return impresion;
+    }
     //Getters and Setters
 
     public String getNombre() {

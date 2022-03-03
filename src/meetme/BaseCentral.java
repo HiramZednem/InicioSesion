@@ -69,23 +69,32 @@ public String LeerBandeja(int idPropia){
 
 
 public void CambiarContraseña(String _nombre,String _contraseña){ //Cambiar contraseña, este codigo es reutilizado de iniciarSesion, primero inicia sesion y despues si el inicio de sesion es valido deja cambiar la contraseña.
+    boolean credencialesCorrectas = false;
     for (int i=0; i< lista.size();i++){
-            
             String auxNombre = lista.get(i).getNombre();
             String auxContraseña = lista.get(i).getContraseña();
 
             if (_nombre.equals(auxNombre) && _contraseña.equals(auxContraseña))
             {
                 lista.get(i).setContraseña(JOptionPane.showInputDialog("Ingrese nueva contraseña: ")); //Si la credencial es valida le pregunta cual quiere que sea su nueva contraseña y  setea esta contraseña nueva,  en el objeto que es la variable (i).
+                credencialesCorrectas=true;
                 break; //Detener el ciclo for
-                
-            }else{
-               JOptionPane.showMessageDialog(null,"Credenciales Incorrectas!");//Si la credencial es invalida se le manda este mensaje.
+            }  
+    }
+    if (!credencialesCorrectas)
+   JOptionPane.showMessageDialog(null,"Credenciales Incorrectas!");//Si la credencial es invalida se le manda este mensaje.
+}
+public void BuscarUsuario(String BusquedaUsuario){
+    //Creo metodo BuscarUsuario, recibe BusquedaUsuario que es el usuario que estamos buscando.
+    for (int i=0; i< lista.size();i++){ 
+    
+            String auxNombre = lista.get(i).getNombre(); //Creo auxNombre, para almacenar el nombre que va cambiando segun la iteracion del ciclo for y compararlos
+            if (BusquedaUsuario.equals(auxNombre)) {
+                JOptionPane.showMessageDialog(null,lista.get(i).imprimirUsuario(i));
+                break;
             }
     }
-   
 }
-
 //Getters
 public int getSesionIniciada(){
         return sesionIniciada;

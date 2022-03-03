@@ -40,6 +40,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JButton();
         txtTuID1 = new javax.swing.JTextField();
         btnEnviarMensaje = new javax.swing.JButton();
+        btnUsuario = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMensajesRecibidos = new javax.swing.JTextArea();
@@ -83,6 +84,13 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
             }
         });
 
+        btnUsuario.setText("Buscar Usuario");
+        btnUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -101,7 +109,8 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtTuID1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                             .addComponent(txtTuID, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                            .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -114,6 +123,8 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtTuID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
+                .addComponent(btnUsuario)
+                .addGap(32, 32, 32)
                 .addComponent(btnEnviarMensaje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesion)
@@ -219,9 +230,14 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
         // Este metodo se encarga de enviar mensajes a la pila del usuario seleccionado
-        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),nombreUsuario );
+        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario:")),nombreUsuario );
         //Esto se manda al metodo enviarMensaje de la clase BaseCentral donde recibe IdEnviar (Que es la id que le pedimos al usuario), y se llevasu nombre para a la hora de concatenar el mensaje se escriba Mensaje de + nombreUsuario
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
+
+    private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
+        // Aqui se le pide al usuario el nombre que desea buscar y se manda a BaseCentral metodo BuscarUsuario
+        metodo.BuscarUsuario(JOptionPane.showInputDialog("Ingrese nombre que desea buscar:"));
+    }//GEN-LAST:event_btnUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,6 +279,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
     private javax.swing.JButton btnEnviarMensaje;
     private javax.swing.JButton btnLeerBandeja;
     private javax.swing.JButton btnLimpiarBandeja;
+    private javax.swing.JButton btnUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
