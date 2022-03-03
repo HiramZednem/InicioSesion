@@ -54,9 +54,9 @@ public boolean IniciarSesion(String _nombre,String _contraseña){ //Recibe el no
     return false; // Retorna Falso si no son validas
 }
 
-public void enviarMensaje(int idEnviar,int idPropia){
+public void enviarMensaje(int idEnviar,String nombreUsuario){
     if(idEnviar<lista.size()){ //Comprueba si el usuario al que se le va a enviar mensaje existe
-        String Mensaje = "Mensaje de "+lista.get(idPropia).getNombre()+": "+JOptionPane.showInputDialog("Ingrese su mensaje:")+"\n"; //Aqui concatena el mensaje del usuario, incluyendo el nombre de quien lo manda, y un pequeño formato que cree.
+        String Mensaje = "Mensaje de "+nombreUsuario+": "+JOptionPane.showInputDialog("Ingrese su mensaje:")+"\n"; //Aqui concatena el mensaje del usuario, incluyendo el nombre de quien lo manda, y un pequeño formato que cree.
         lista.get(idEnviar).PilaUsuario.push(Mensaje); //Se envia el mensaje a la pila del usuario que se desea que llegue
     }else{ //Si el usuario no existe le aparece una alerta al usuario como numero invalido
         JOptionPane.showMessageDialog(null,"Numero de ID invalido!");

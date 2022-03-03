@@ -219,7 +219,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
         // Este metodo se encarga de enviar mensajes a la pila del usuario seleccionado
-        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),Integer.parseInt(idUsuario) );
+        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),nombreUsuario );
         //Esto se manda al metodo enviarMensaje de la clase BaseCentral donde recibe IdEnviar (Que es la id que le pedimos al usuario), y se lleva id Usuario para a la hora de concatenar el mensaje se escriba Mensaje de + nombreUsuario
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
