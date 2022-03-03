@@ -1,8 +1,6 @@
 /**
  * Aqui se abre la pestaña MenuSesionIniciada, donde el usuario puede mandar mensajes  y leer sus mensajes usando los metodos de la pila, para acceder
- * a esta clase, se hace uso de un contructor donde se recibe el
- * 
- * nsesion a idUsuario
+ * a esta clase, se hace uso de un contructor donde se recibe el idUsuario y el nombre del usuario para poder imprimirlo en pantalla
  */
 package meetme;
 
@@ -10,12 +8,12 @@ import javax.swing.JOptionPane;
 
 
 public class MenuSesionIniciada extends javax.swing.JFrame {
-    //Metodo
+   //Se crea el objeto "metodo", que me sirve para acceder a los metodos de BaseCentral
     BaseCentral metodo = new BaseCentral();
-//Atributo
+//Se definen los atributos idUsuario y nombreUsuario que me van a servir para ser impresos en pantalla por medio de un jTextField NOTA: En la version NetBeans 12.6, los mensajes impresos tienen que ser modificados desde el apartado de diseño, ya que no deja hacer modificaciones desde codigo.
     String idUsuario;
     String nombreUsuario;
-//Constructor
+//Constructor que se usa para crear el objeto que viene desde MenuInicioSesion
     public MenuSesionIniciada(String idUsuario,String nombreUsuario) {
         this.idUsuario = idUsuario;
         this.nombreUsuario=nombreUsuario;
@@ -197,30 +195,32 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
 
     private void btnLeerBandejaeerBandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerBandejaeerBandejaActionPerformed
         // TODO add your handling code here:
-        txtMensajesRecibidos.setText( metodo.LeerBandeja(Integer.parseInt(idUsuario)) + txtMensajesRecibidos.getText() ); //aqui creo que aplicar tostryn
+        //Este metodo se encarga de definir txtMensajesRecibidos con el mensaje que es almacenado en la pila del usuario(Y esta pila es creada en la clase datosUsuario).
+        txtMensajesRecibidos.setText( metodo.LeerBandeja(Integer.parseInt(idUsuario)) + txtMensajesRecibidos.getText() ); 
     }//GEN-LAST:event_btnLeerBandejaeerBandejaActionPerformed
 
     private void btnLimpiarBandejaeerBandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBandejaeerBandejaActionPerformed
-        // TODO add your handling code here:
+        //Este metodo se encarga de definir txtMensajesRecibidos con un mensaje vacio para limpiar la interfaz grafica
         txtMensajesRecibidos.setText("");
     }//GEN-LAST:event_btnLimpiarBandejaeerBandejaActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
-        // TODO add your handling code here:
+        // El metodo btnCerrarSesion hace que cuando se pulse oculte la ventana
         setVisible(false);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void txtTuIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTuIDActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_txtTuIDActionPerformed
 
     private void txtTuID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTuID1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtTuID1ActionPerformed
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
-        // TODO add your handling code here:
+        // Este metodo se encarga de enviar mensajes a la pila del usuario seleccionado
         metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),Integer.parseInt(idUsuario) );
+        //Esto se manda al metodo enviarMensaje de la clase BaseCentral donde recibe IdEnviar (Que es la id que le pedimos al usuario), y se lleva id Usuario para a la hora de concatenar el mensaje se escriba Mensaje de + nombreUsuario
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     /**
