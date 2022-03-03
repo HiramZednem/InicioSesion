@@ -1,6 +1,6 @@
 /**
  * Esta clase de aqui, es mi base del proyecto(De ahi el nombre de base central), aqui se encuentran todos los metodos que mi
- * programa utiliza para realizar todas las acciones del programa
+ * programa utiliza para realizar todas las acciones del programa.
  * 
  * VARIABLES
  * static ArrayList<datosUsuario> lista; - Esta variable es el arraylist donde almacenos los registros de mis usuarios, en la clase datos Usuario se encuentra todos los atributos que poseen los registros que son almacenados aqui.
