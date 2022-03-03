@@ -1,6 +1,8 @@
 /**
  * Aqui se abre la pestaña MenuSesionIniciada, donde el usuario puede mandar mensajes  y leer sus mensajes usando los metodos de la pila, para acceder
  * a esta clase, se hace uso de un contructor donde se recibe el
+ * 
+ * nsesion a idUsuario
  */
 package meetme;
 
@@ -11,11 +13,11 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
     //Metodo
     BaseCentral metodo = new BaseCentral();
 //Atributo
-    String nSesion;
+    String idUsuario;
     String nombreUsuario;
 //Constructor
-    public MenuSesionIniciada(String nSesion,String nombreUsuario) {
-        this.nSesion = nSesion;
+    public MenuSesionIniciada(String idUsuario,String nombreUsuario) {
+        this.idUsuario = idUsuario;
         this.nombreUsuario=nombreUsuario;
         initComponents();
     }
@@ -69,7 +71,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
         });
 
         txtTuID1.setEditable(false);
-        txtTuID1.setText("\nTu ID de registro es:  "+nSesion);
+        txtTuID1.setText("\nTu ID de registro es:  "+idUsuario);
         txtTuID1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTuID1ActionPerformed(evt);
@@ -195,7 +197,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
 
     private void btnLeerBandejaeerBandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerBandejaeerBandejaActionPerformed
         // TODO add your handling code here:
-        txtMensajesRecibidos.setText( metodo.LeerBandeja(Integer.parseInt(nSesion)) + txtMensajesRecibidos.getText() ); //aqui creo que aplicar tostryn
+        txtMensajesRecibidos.setText( metodo.LeerBandeja(Integer.parseInt(idUsuario)) + txtMensajesRecibidos.getText() ); //aqui creo que aplicar tostryn
     }//GEN-LAST:event_btnLeerBandejaeerBandejaActionPerformed
 
     private void btnLimpiarBandejaeerBandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBandejaeerBandejaActionPerformed
@@ -218,7 +220,7 @@ public class MenuSesionIniciada extends javax.swing.JFrame {
 
     private void btnEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMensajeActionPerformed
         // TODO add your handling code here:
-        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),Integer.parseInt(nSesion) );
+        metodo.enviarMensaje(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario")),Integer.parseInt(idUsuario) );
     }//GEN-LAST:event_btnEnviarMensajeActionPerformed
 
     /**
