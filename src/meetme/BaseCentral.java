@@ -101,6 +101,26 @@ public void BuscarUsuario(String BusquedaUsuario){
          JOptionPane.showMessageDialog(null,"No se encontro ese Usuario!");
     }
 }
+
+public boolean ComprobarRegistro(String usuario){
+    //Este metodo sirve para comprobrar a la hora del registro, si el nombre ingresado ya esta registrado y poder tirar un error, es mandando a llamar desde MenuRegistro y recibe el nombre del usuario para compararlo.
+    for (int i=0; i< lista.size();i++){ 
+    
+            String auxNombre = lista.get(i).getNombre(); //Creo auxNombre, para almacenar el nombre que va cambiando segun la iteracion del ciclo for y compararlos
+            if (usuario.equals(auxNombre)) {
+                return false; //retorna falso si el nombre ya esta registrado
+            }
+    }
+    return true; //retorna verdadero si todo esta bien y se puede continuar con el registro
+}
+
+
+
+
+
+
+
+
 //Getters
 public int getSesionIniciada(){
         return sesionIniciada;

@@ -242,14 +242,20 @@ public class MenuRegistro extends javax.swing.JFrame {
        String usuario = txtUsuario.getText();
        String contraseña = txtContraseña.getText();
        
-       //Y se crea un objeto con las caracteristicas que mi usuario agrego y es registrado por el metodo Registrar() de mi clase BaseCentral
-       metodo =  new BaseCentral(usuario,contraseña);
-       metodo.Registrar();
-      JOptionPane.showMessageDialog(null, "Registro Agregado!");
-      
+       //See crea un objeto con las caracteristicas que mi usuario agrego
+      metodo =  new BaseCentral(usuario,contraseña);
+           
+            if (metodo.ComprobarRegistro(usuario)){//Se va a ComprobarUsuario que es un metodo de BaseCentral, si el nombre no es igual a otro existente,este es registrado por el metodo Registrar() de mi clase BaseCentral
+           metodo.Registrar();
+           JOptionPane.showMessageDialog(null, "Registro Agregado!");
+           
       //Oculta la venta MenuRegistro una vez se hace el registro y limpia los campos llenados po el usuario
       setVisible(false);
       limparCampos();
+       }else{ //Caso contrario le dice que el usuario que intenta registrar ya esta registrado
+            JOptionPane.showMessageDialog(null, "El nombre de usuario que intentas registrar ya esta registrado, intente con otro nombre de usuario");
+            txtUsuario.setText(null);
+       }
     }//GEN-LAST:event_btnRegistrarteActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
