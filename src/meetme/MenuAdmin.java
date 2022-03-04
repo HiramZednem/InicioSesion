@@ -31,6 +31,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         btnBorrarTodosLosUsuarios = new javax.swing.JButton();
         btnVerDatosUsuarios = new javax.swing.JButton();
         btnBorrarUsuarioEspecifico = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +61,13 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,6 +83,10 @@ public class MenuAdmin extends javax.swing.JFrame {
                     .addComponent(btnVerDatosUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBorrarUsuarioEspecifico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAtras)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,11 +95,13 @@ public class MenuAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
                 .addComponent(btnVerDatosUsuarios)
-                .addGap(18, 18, 18)
-                .addComponent(btnBorrarTodosLosUsuarios)
                 .addGap(27, 27, 27)
+                .addComponent(btnBorrarTodosLosUsuarios)
+                .addGap(30, 30, 30)
                 .addComponent(btnBorrarUsuarioEspecifico)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                .addComponent(btnAtras)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,6 +132,11 @@ public class MenuAdmin extends javax.swing.JFrame {
     private void btnBorrarUsuarioEspecificoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarUsuarioEspecificoActionPerformed
        metodo.BorrarUsuarioEspecifico(Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario a elminar: ")));
     }//GEN-LAST:event_btnBorrarUsuarioEspecificoActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +174,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBorrarTodosLosUsuarios;
     private javax.swing.JButton btnBorrarUsuarioEspecifico;
     private javax.swing.JButton btnVerDatosUsuarios;
