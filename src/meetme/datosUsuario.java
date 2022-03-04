@@ -15,6 +15,12 @@ public class datosUsuario {
         String impresion = "El nombre del Usuario es: "+Nombre+"\nSu ID es: "+i;
                 return impresion;
     }
+    
+    public String imprimirAdmin(int i){ //Este metodo es para imprimir Nombre, contraseña e id de todos los usuarios
+        
+        String impresion = "El nombre del Usuario es: "+Nombre+"\nSu contraseña es:  "+Contraseña+"\nSu ID es: "+i+"\n";
+                return impresion;
+    }
     //Getters and Setters
 
     public String getNombre() {

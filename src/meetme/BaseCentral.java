@@ -38,6 +38,11 @@ public void Registrar(){
 }
 
 public boolean IniciarSesion(String _nombre,String _contraseña){ //Recibe el nombre y contraseña  ingresados por el usuario
+    //Se agrega un inicio de sesion admin para poder borrar usuarios
+    if (_nombre.equals("admin") && _contraseña.equals("admin")){//Si el usuario y la contraseña es admin, accede al menu de admin
+        MenuAdmin admin = new MenuAdmin();
+        admin.setVisible(true);
+    }
     for (int i=0; i< lista.size();i++){ //Y se crea un ciclo for, encargado de recorrer toda nuestra lista obteniendo el nombre y contraseña, para comprobar si son iguales
             
             String auxNombre = lista.get(i).getNombre(); //Hice este paso de la variable auxiliar para en un futuro no perderme de lo que hice, pero siento es innecesario 
@@ -50,6 +55,10 @@ public boolean IniciarSesion(String _nombre,String _contraseña){ //Recibe el no
                 return true; //Retorna verdadero si las credenciales son validas
             }
         }
+    
+    if (_nombre.equals("admin")){ 
+        return false;
+    }
     return false; // Retorna Falso si no son validas
 }
 
@@ -110,10 +119,36 @@ public boolean ComprobarRegistro(String usuario){
                 return false; //retorna falso si el nombre ya esta registrado
             }
     }
+    if (usuario.equals("admin")){ //aqui se crea una restriccion para que no se pueda crear el usuario admin
+        return false;
+    }
     return true; //retorna verdadero si todo esta bien y se puede continuar con el registro
 }
+public void LimpiarArray(){ //Este metodo sirve para limpiar el ArrayList, es accedido unicamente por MenuAdmin
+    lista.clear();
+}
 
+public void ImprimirDatosAdmin(){
+    if (lista.isEmpty()){
+         JOptionPane.showMessageDialog(null,"No hay usuarios registrados");
+    }else{
+        String datos = "";
+       for (int i=0; i<lista.size();i++){
+           datos = datos + lista.get(i).imprimirAdmin(i);
+       }
+        JOptionPane.showMessageDialog(null,datos);
+    }
+}
 
+public void BorrarUsuarioEspecifico(int i){
+    if (i < lista.size())
+    {
+    lista.remove(i);
+    JOptionPane.showMessageDialog(null,"Usuario Borrado");
+    }else{
+    JOptionPane.showMessageDialog(null,"Numero de ID invalido!");
+    }
+}
 //Getters
 public int getSesionIniciada(){
         return sesionIniciada;
